@@ -18,20 +18,21 @@ crossing_road = chickens - car
 gameOver = "Nothing left\n"
 #Ends with a questions
 
+#condition if equation equals 0
 if crossing_road <= 0:
-    chickens0 = input("Why did the chicken died at the road?\n Type 'y' or 'n'\n")
+    chickens0 = input("Why did the chicken died at the road?\n Type 'y' or 'n'")
     print(chickens0)
     if chickens0 == "y":
         print("to get to the otherside\n")
-        print(gameOver)
+
     else:
         print("ok\n")
         print("The Chickens are gone anyway...\n")
         print(gameOver)
 
-# if these conditions are met: chickens greater than 0 but less than 10. This will perform.
+# if these conditions are met: chickens greater than 0 and less than 10. This will perform.
 if crossing_road >= 1 and crossing_road < 10:
-    chickens1 = (input("The " + str(crossing_road) + " chicken(s) ran to the otherside... and into the desert! \n But wait?! 5 coyotes surround them for the pickings! \n keep watching? 'y' or 'n' \n"))
+    chickens1 = (input("The " + str(crossing_road) + " chicken(s) ran to the otherside... and into the desert! \n But wait?! 5 coyotes surrounds them for the pickings! \n will you keep watching? 'y' or 'n' \n"))
     leftOver = crossing_road
     print(chickens1)
     #Assign the number of coyotes
@@ -42,11 +43,11 @@ if crossing_road >= 1 and crossing_road < 10:
     if chickens1 == "y":
         if crossing_desert <= 0:
             print( "Only " + str(crossing_desert) + " left. Woof! I think they eat the bones too...")
-        elif crossing_desert == 1:
+        elif crossing_desert >= 1 and crossing_desert <= 5:
             print("At least there's " + str(crossing_desert) + " it made it back to the ranch to tell its story!")
-        elif crossing_desert < 2:
+        elif crossing_desert <= 6 and crossing_desert <= 10:
             print("Okay, there's " + str(crossing_desert) + " fate have mercy on these souls! Amen")
         # if these conditions are met: chickens > or = 0 this will prompt the ending
-        else:
-            print("the chickens was the last thing on your mind, so you left... Are you even human?!")
+    else:
+        print("the chickens was the last thing on your mind, so you left... Are you even human?!")
 
